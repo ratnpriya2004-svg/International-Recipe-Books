@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 International Recipe Books</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <!-- 🔥 COMPLETE HAMBURGER MENU - SAB BUTTONS YAHAN -->
+<div id="mobileMenu" class="mobile-menu">
+    <div class="menu-toggle" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div id="menuContent" class="menu-content hidden">
+        <!-- Quick Actions -->
+        <div class="menu-section">
+            <div class="menu-item" onclick="toggleAllCountries();toggleMobileMenu()">🌍 Show All Countries</div>
+            <div class="menu-item" onclick="hideAllCountries();toggleMobileMenu()">🙈 Hide All Countries</div>
+            <div class="menu-item" onclick="clearSearch();toggleMobileMenu()">🔍 Clear Search</div>
+        </div>
+        
+        <!-- Admin -->
+        <div class="menu-section">
+            <div class="menu-item" onclick="toggleAdmin();toggleMobileMenu()">🔐 Toggle Admin</div>
+            <div class="menu-item" onclick="openAdminPanel();toggleMobileMenu()">📊 Admin Dashboard</div>
+            <div class="menu-item" onclick="exportData();toggleMobileMenu()">📥 Export Data</div>
+        </div>
+        
+        <!-- Features -->
+        <div class="menu-section">
+            <div class="menu-item" onclick="testIndia();toggleMobileMenu()">🇮🇳 Quick India</div>
+            <div class="menu-item" onclick="toggleTheme();toggleMobileMenu()">🌙 Dark/Light</div>
+            <div class="menu-item" onclick="resetApp();toggleMobileMenu()">🔄 Reset App</div>
+        </div>
+        
+        <!-- Filters -->
+        <div class="menu-section">
+            <div class="menu-item" onclick="filterByCuisine('vegetarian');toggleMobileMenu()">🥗 Veg</div>
+            <div class="menu-item" onclick="filterByCuisine('non-veg');toggleMobileMenu()">🍗 Non-Veg</div>
+            <div class="menu-item" onclick="filterByCuisine('dessert');toggleMobileMenu()">🍰 Dessert</div>
+            <div class="menu-item" onclick="filterByCuisine('quick');toggleMobileMenu()">⚡ Quick</div>
+        </div>
+        
+        <div class="menu-item close-item" onclick="toggleMobileMenu()">✖ Close</div>
+    </div>
+</div>
+
+
+    <!-- 🔥 CLEAN HEADER -->
+     <header class="header">
+        <div class="container">
+            <h1>🌍 International Recipe Books</h1>
+            <button class="admin-btn" onclick="toggleAdmin()">🔐 Admin</button>
+            <span id="adminStatus" class="admin-status hidden">🔧 Admin ON</span>
+        </div>
+    </header>
+
+   <!-- 🔥 SEARCH BAR ONLY -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="🔍 Search countries or recipes..." class="search-bar">
+            <button onclick="searchCountries()" class="search-btn">Search</button>
+        </div>
+
+        <!-- 🔥 TOGGLE BUTTONS -->
+        <div class="toggle-buttons">
+            <button id="showAllBtn" class="toggle-btn active" onclick="toggleAllCountries()">
+                🌍 Show All Countries
+            </button>
+            <button id="hideAllBtn" class="toggle-btn" onclick="hideAllCountries()">
+                🙈 Hide All Countries
+            </button>
+        </div>
+        
+        <div id="country-grid" class="country-grid"></div>
+        <div id="noResults" class="no-results hidden">No countries found!</div>
+    </div>
+        
+    <!-- 🔥 FOOTER - BILKUL NICH ME -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand -->
+                <div class="footer-section">
+                    <h3>🌍 International Recipes</h3>
+                    <p>Explore 240+ authentic recipes from 12 countries!</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" title="Facebook">📘</a>
+                        <a href="#" class="social-icon" title="Instagram">📷</a>
+                        <a href="#" class="social-icon" title="Twitter">🐦</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>🔗 Quick Links</h4>
+                    <ul>
+                        <li onclick="generateCountryCards()">🌍 All Countries</li>
+                        <li onclick="testIndia()">🇮🇳 India</li>
+                        <li onclick="clearSearch()">🔍 Clear Search</li>
+                    </ul>
+                </div>
+
+                <!-- Features -->
+                <div class="footer-section">
+                    <h4>✨ Features</h4>
+                    <ul>
+                        <li>✅ 240+ Recipes</li>
+                        <li>✅ 12 Countries</li>
+                        <li>✅ Smart Search</li>
+                        <li>✅ Mobile Responsive</li>
+                        <li>✅ Admin Panel</li>
+                    </ul>
+                </div>
+
+                <!-- Designer -->
+                <div class="footer-section">
+                    <h4>👩‍💻 Designer</h4>
+                    <p><strong>Ratnpriya Kumari</strong></p>
+                    <p><small>Patna, Bihar</small></p>
+                    <p>BCA Student Project 2026</p>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <span>🍽️ <strong id="totalRecipes">Loading...</strong> Recipes | 
+                     🌍 <strong id="totalCountries">Loading...</strong> Countries</span>
+                <span>© 2026 | <strong>Design by Ratnpriya Kumari</strong> ✨</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/recipes.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
